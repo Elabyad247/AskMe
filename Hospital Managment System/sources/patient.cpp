@@ -10,7 +10,7 @@
 #include <fstream>
 using namespace std;
 
-int ToInt(const string &str) {
+static int ToInt(const string &str) {
   istringstream iss(str);
   int num;
   iss >> num;

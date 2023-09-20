@@ -9,9 +9,11 @@
 #include <string>
 using namespace std;
 
+class appointment;
 class patient : public person {
  private:
   string sickness;
+  friend class appointment;
 
  public:
   patient();

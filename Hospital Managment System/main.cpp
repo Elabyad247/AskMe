@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 #include <limits>
-#include "includes/person.h"
 #include "includes/Hospital.h"
+#include "includes/appointment.h"
 #include "includes/doctor.h"
 #include "includes/patient.h"
 using namespace std;
@@ -16,6 +16,8 @@ void loadData() {
   doc.loadData();
   patient pat;
   pat.loadData();
+  appointment app;
+  app.loadData();
 }
 
 void showMainMenu();
@@ -28,28 +30,36 @@ void showAppointmentsMenu() {
   while (!back) {
     cout << "< APPOINTMENTS SECTION >" << endl;
     cout << "\t" << "01: Book Appointment" << endl;
-    cout << "\t" << "02: Remove Appointment" << endl;
-    cout << "\t" << "03: Get Appointment Details" << endl;
-    cout << "\t" << "04: Show All Appointments" << endl;
+    cout << "\t" << "02: Get Appointment Details" << endl;
+    cout << "\t" << "03: Show All Appointments" << endl;
     cout << "\t" << "-1: Back" << endl;
 
     int operationNumber;
     do {
       cout << "Enter operation number: ";
       cin >> operationNumber;
-      if (operationNumber > 4 || operationNumber < -1 || operationNumber == 0) {
+      if (operationNumber > 3 || operationNumber < -1 || operationNumber == 0) {
         cout << "Invalid operation number!" << endl;
       }
-    } while (operationNumber > 4 || operationNumber < -1 || operationNumber == 0);
+    } while (operationNumber > 3 || operationNumber < -1 || operationNumber == 0);
     cout << endl;
     if (operationNumber == 1) {
-
+      appointment app;
+      app.book();
+      cout << "Press Enter to go back";
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 2) {
-
+      appointment app;
+      app.getDetails();
+      cout << "Press Enter to go back";
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 3) {
-
-    } else if (operationNumber == 4) {
-
+      Hospital::printAppointments();
+      cout << "Press Enter to go back";
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == -1) {
       cout << endl;
       back = true;
@@ -86,14 +96,17 @@ void showPatientsMenu() {
       pat.removePerson();
       cout << "Press Enter to go back";
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 3) {
       patient pat;
       pat.getDetails();
       cout << "Press Enter to go back";
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 4) {
       Hospital::printPatients();
       cout << "Press Enter to go back";
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == -1) {
       cout << endl;
@@ -131,14 +144,17 @@ void showDoctorsMenu() {
       doc.removePerson();
       cout << "Press Enter to go back";
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 3) {
       doctor doc;
       doc.getDetails();
       cout << "Press Enter to go back";
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == 4) {
       Hospital::printDoctors();
       cout << "Press Enter to go back";
+      cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
       cin.ignore(std::numeric_limits<streamsize>::max(),'\n');
     } else if (operationNumber == -1) {
       cout << endl;

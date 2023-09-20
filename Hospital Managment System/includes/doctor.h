@@ -7,9 +7,11 @@
 
 #include "person.h"
 
+class appointment;
 class doctor : public person {
  private:
   string specialization;
+  friend class appointment;
 
  public:
   doctor();
