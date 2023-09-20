@@ -18,8 +18,13 @@ class person {
 
  public:
   person();
-  person(int _id, string _fName, string _lName, int _age, string _gender, string _phNumber);
 
+  virtual void getDetails();
+  virtual void printDetails();
+  virtual void addPerson();
+  virtual void removePerson() = 0;
+  virtual void loadData() = 0;
+  string getFullName();
 };
 
 #endif //OOP_HOSPITAL_PERSON_H_

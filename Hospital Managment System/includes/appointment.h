@@ -13,10 +13,8 @@ class appointment {
   int id;
   string date;
   doctor aDoctor;
-  patient aPatient;
  public:
   appointment();
-  appointment(int _id, string _date, doctor _aDoctor, patient _aPatient);
 
   void printDetails();
 };

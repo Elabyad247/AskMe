@@ -6,6 +6,8 @@
 #define OOP_HOSPITAL_PATIENT_H_
 
 #include "person.h"
+#include <string>
+using namespace std;
 
 class patient : public person {
  private:
@@ -13,12 +15,13 @@ class patient : public person {
 
  public:
   patient();
-  patient(int _id, string _fName, string _lName, int _age, string _gender, string _phNumber, string _sickness);
 
-  void setSickness(string newSickness);
-  string getSickness();
-
+  void getDetails();
   void printDetails();
+  void addPerson();
+  void removePerson();
+  void loadData();
+  string getSickness();
 };
 
 #endif //OOP_HOSPITAL_PATIENT_H_

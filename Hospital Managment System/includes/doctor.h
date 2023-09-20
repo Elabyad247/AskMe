@@ -13,9 +13,12 @@ class doctor : public person {
 
  public:
   doctor();
-  doctor(int _id, string _fName, string _lName, int _age, string _gender, string _phNumber, string _specialization);
 
+  void getDetails();
   void printDetails();
+  void addPerson();
+  void removePerson();
+  void loadData();
 };
 
 #endif //OOP_HOSPITAL_DOCTOR_H_

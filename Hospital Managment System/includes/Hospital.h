@@ -8,22 +8,22 @@
 
 #include "doctor.h"
 #include "patient.h"
-#include "appointment.h"
+//#include "appointment.h"
 
 class Hospital {
  private:
-  map<int, doctor> doctorsList;
-  map<int, patient> patientsList;
-  map<int, appointment> appointmentsList;
+  static map<int, doctor> doctorsList;
+  static map<int, patient> patientsList;
+  //static map<int, appointment> appointmentsList;
 
   friend class doctor;
   friend class patient;
-  friend class appointment;
+  //friend class appointment;
  public:
 
-  void printDoctors();
-  void printPatients();
-  void printAppointments();
+  static void printDoctors();
+  static void printPatients();
+  //static void printAppointments();
 };
 
 #endif //OOP_HOSPITAL_HOSPITAL_H_
